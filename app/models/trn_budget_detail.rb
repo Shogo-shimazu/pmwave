@@ -1,2 +1,3 @@
 class TrnBudgetDetail < ApplicationRecord
+
 end

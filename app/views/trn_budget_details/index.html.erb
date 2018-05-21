@@ -1,0 +1,9 @@
+<h1>予算一覧</h1>
+
+<ul>
+  <% @trn_budget_details.each do |trn_budget_detail| %>
+    <li><%= link_to trn_budget_detail.bg_id, trn_budget_detail %> : <%= trn_budget_detail.content %></li>
+  <% end %>
+</ul>
+
+<%= link_to '新規予算の登録', new_trn_budget_detail_path %>

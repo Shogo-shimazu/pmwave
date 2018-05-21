@@ -1,0 +1,10 @@
+<h1>id: <%= @trn_budget_detail.bg_id %> の予算編集ページ</h1>
+
+<%= form_for(@trn_budget_detail) do |f| %>
+  <%= f.label :content, '予算' %>
+  <%= f.text_field :content %>
+
+  <%= f.submit '登録' %>
+<% end %>
+
+<%= link_to '一覧に戻る', trn_budget_details_path %>

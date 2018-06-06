@@ -1,0 +1,55 @@
+<%= form_for(trn_budget_detail) do |f| %>
+  <% if trn_budget_detail.errors.any? %>
+    <div bg_id="error_explanation">
+      <ul>
+        <% trn_budget_detail.errors.full_messages.each do |trn_budget_detail| %>
+          <li><%= trn_budget_detail %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :PJID, 'PJID' %><br>
+  <%= f.text_field :pj_id %><br>
+  <%= f.label :subpjID, 'subpjID' %><br>
+  <%= f.text_field :subpj_id %><br>
+  <%= f.label :teamID, 'チームID' %><br>
+  <%= f.text_field :team_id %><br>
+
+  <%= f.label :PJname, 'PJname' %><br>
+  <%= f.text_field :pj_name %><br>
+  <%= f.label :subpjname, 'subpjname' %><br>
+  <%= f.text_field :subpj_name %><br>
+  <%= f.label :teamname, 'チームname' %><br>
+  <%= f.text_field :team_name %><br>
+
+
+  <%= f.label :bgtitle, '予算タイトル' %><br>
+  <%= f.text_field :bg_title %><br>
+
+  <%= f.label :bgkind, '予算種別' %><br>
+  <%= f.text_field :bg_kind %><br>
+
+  <%= f.label :bgdetai, '予算詳細' %><br>
+  <%= f.text_field :bg_detail %><br>
+
+  <%= f.label :bgunitprice, '単価' %><br>
+  <%= f.text_field :bg_unit_price  %><br>
+
+  <%= f.label :bgquantity, '数量' %><br>
+  <%= f.text_field :bg_quantity %><br>
+
+  <%= f.label :bgtotalprice, '合計' %><br>
+  <%= f.text_field :bg_total_price %><br>
+
+  <%= f.label :file, '添付ファイル' %><br>
+  <%= f.text_field :file %><br>
+
+  <%= f.label :instuserid, '登録者ID' %><br>
+  <%= f.text_field :inst_user_id %><br>
+  <%= f.label :delflg, '削除フラグ' %><br>
+  <%= f.text_field :del_flg %><br>
+
+
+  <%= f.submit '登録' %>
+<% end %>

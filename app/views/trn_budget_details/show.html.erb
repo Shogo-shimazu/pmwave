@@ -1,9 +1,9 @@
-<h1>bg_id: <%= @trn_budget_detail.bg_id %> の予算詳細ページ</h1>
+<h1>予算ID: <%= @trn_budget_details.bg_id %> の予算詳細ページ</h1>
 
-<p><%= @trn_budget_detail.content %></p>
+<p>予算ID： <%= @trn_budget_details.bg_id %></p>
 
 <%= link_to '一覧に戻る', trn_budget_details_path %>
-<%= link_to 'この予算を編集する', edit_trn_budget_detail_path(@trn_budget_detail) %>
-<%= link_to 'この予算を削除する', @trn_budget_detail, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+<%= link_to 'この予算を編集する', edit_trn_budget_detail_path(@trn_budget_details) %>
+<%= link_to 'この予算を削除する', @trn_budget_details, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
 
 

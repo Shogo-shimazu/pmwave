@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_17_105622) do
+ActiveRecord::Schema.define(version: 2018_05_31_013308) do
 
   create_table "mst_pjs", primary_key: "pj_id", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "hojn_id", null: false
@@ -131,6 +131,13 @@ ActiveRecord::Schema.define(version: 2018_05_17_105622) do
     t.string "updt_pgm_id", limit: 256
     t.string "updt_history", limit: 256
     t.string "updt_history_tanto", limit: 256
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

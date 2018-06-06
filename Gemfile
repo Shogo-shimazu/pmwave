@@ -7,8 +7,20 @@ ruby '2.4.1'
 gem 'rails', '~> 5.2.0'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+
+#httpメソッドの置き換えを行ってくれる
+gem 'rails-ujs', '= 0.1.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+
+#ページングを簡単に実装できる
+gem 'will_paginate', '= 3.1.6'
+
+#will_paginateをbootstrap風にする
+gem 'will_paginate-bootstrap'
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

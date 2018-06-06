@@ -1,15 +1,5 @@
 <h1>予算新規登録ページ</h1>
 
-<%= form_for(@trn_budget_detail) do |f| %>
-  <%= f.label :content, '予算タイトル' %>
-  <%= f.label :content, '予算種別' %>
-  <%= f.label :content, '予算詳細' %>
-  <%= f.label :content, '単価' %>
-  <%= f.label :content, '数量' %>
-  <%= f.label :content, '合計' %>
-  <%= f.label :content, '添付ファイル' %>
-
-  <%= f.submit '登録' %>
-<% end %>
+<%= render 'form', trn_budget_detail: @trn_budget_detail %>
 
 <%= link_to '一覧に戻る', trn_budget_details_path %>

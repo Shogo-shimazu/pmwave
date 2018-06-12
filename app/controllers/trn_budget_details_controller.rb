@@ -2,7 +2,7 @@ class TrnBudgetDetailsController < ApplicationController
 
   def index
     @trn_budget_details = TrnBudgetDetail.all
-        .paginate(page: params[:page], per_page: 2)
+        .paginate(page: params[:page], per_page: 4)
     
     @trn_budget_detail = TrnBudgetDetail.new
   end
@@ -12,7 +12,7 @@ class TrnBudgetDetailsController < ApplicationController
   end
 
   def new
-    @trn_budget_detail = TrnBudgetDetail.new
+    @trn_budget_details = TrnBudgetDetail.new
   end
 
   def create

@@ -19,9 +19,10 @@
         <td style="vertical-align: middle"><%= trn_budget_detail.bg_title %></td>
         <td style="vertical-align: middle"><%= trn_budget_detail.bg_kind %></td>
         <td style="vertical-align: middle"><%= trn_budget_detail.bg_detail %></td>
-        <td class="henshu-cell">
-          <button type="button" class="btn btn-default"><%= link_to '詳細',trn_budget_detail %></button>
-          <button type="button" class="btn btn-default"><%= link_to '削除',trn_budget_detail, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></button>
+        <td style="vertical-align: middle">
+              <button type="button" class="btn btn-default"><%= link_to '詳細',trn_budget_detail %></button>
+              <button type="button" class="btn btn-default"><%= link_to '編集',edit_trn_budget_detail_path(@trn_budget_details) %></button>
+              <button type="button" class="btn btn-default"><%= link_to '削除',trn_budget_detail, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></button>
         </td>
       </tr>
       <% @grid_no = @grid_no %>
@@ -29,6 +30,7 @@
   <tbody>
   </table>
 </div>  
+
 <div style="text-align: center">
   <%= will_paginate @trn_budget_details,
                     renderer: BootstrapPagination::Rails,

@@ -18,6 +18,19 @@ class TrnBudgetDetailsController < ApplicationController
   def create
     @trn_budget_detail = TrnBudgetDetail.new(trn_budget_detail_params)
 
+   target = DateTime.now
+       @trn_budget_detail.inst_ymd = target
+
+       #↓とりあえずべた書き。本当はログインユーザの情報を取得したい
+       #@user.inst_user_id = 0
+       #@user.hojn_id = 0
+       #@user.pj_id = 0
+
+     #とりあえずべた書き。現在時刻を取得する
+       target = DateTime.now
+       @trn_budget_detail.inst_ymd = target
+       @trn_budget_detail.del_flg = false
+
     if @trn_budget_detail.save
       flash[:success] = '予算が正常に登録されました'
       redirect_to trn_budget_details_path
@@ -25,10 +38,6 @@ class TrnBudgetDetailsController < ApplicationController
       flash.now[:danger] = '予算が登録できませんでした'
       render :new
     end
-   target = DateTime.now
-       @trn_budget_detail.inst_ymd = target
-    
-    
   end
 
   def edit
@@ -37,6 +46,10 @@ class TrnBudgetDetailsController < ApplicationController
 
   def update
     @trn_budget_detail = TrnBudgetDetail.find(params[:id])
+
+       target = DateTime.now
+       @trn_budget_detail.updt_ymd = target
+
 
     if @trn_budget_detail.update(trn_budget_detail_params)
       flash[:success] = '予算は正常に更新されました'
@@ -51,18 +64,21 @@ class TrnBudgetDetailsController < ApplicationController
     @trn_budget_detail = TrnBudgetDetail.find(params[:id])
     @trn_budget_detail.destroy
 
+   #削除処理（論理削除）
+   #@trn_budget_detail.remember_token = 'Null'
+   #@trn_budget_detail.del_flg = true
+   #target = DateTime.now
+   #@trn_budget_detail.updt_ymd = target
+   #@trn_budget_detail.del_ymd = target
+   #@trn_budget_detail.updt_history_tanto = 0
+   
+   #更新（エラーチェックを行わない）
+   @trn_budget_detail.save(validate:false)
+
+
     flash[:success] = '予算は正常に削除されました'
     redirect_to trn_budget_details_url
   end
-
-
-  #一覧画面 完了ボタン押下時のアクション
-  def kanryo
-
-  end
-
-
-
 
   private
 
